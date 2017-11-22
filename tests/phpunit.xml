@@ -1,0 +1,17 @@
+<phpunit
+	bootstrap="autoload.php"
+
+	colors="true"
+	stopOnError="true"
+	stopOnFailure="true"
+	stopOnIncomplete="true"
+	stopOnSkipped="true"
+	stopOnRisky="true"
+	verbose="true"
+>
+	<testsuites>
+		<testsuite name="tools">
+			<directory>tests_src</directory>
+		</testsuite>
+	</testsuites>
+</phpunit>
