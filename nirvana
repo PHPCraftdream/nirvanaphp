@@ -1,0 +1,10 @@
+<?php
+
+namespace NirvanaPHP_Console_Run
+{
+	$bootstrap = require 'autoload.php';
+
+	$app = new \PHPCraftdream\NirvanaPHP\Framework();
+	$app->initConsole();
+	$app->getConsole()->run();
+}

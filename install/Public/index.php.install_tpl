@@ -1,0 +1,8 @@
+<?php
+
+namespace {{namespace}} {
+	$initApp = require_once '{{appDirEscaped}}autoload.php';
+
+	$app = $initApp();
+	$app->run();
+}

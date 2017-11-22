@@ -1,0 +1,6 @@
+<?php
+
+namespace NirvanaPHP_Console_Run {
+	$command = 'nirvana:install-app';
+	include '.include';
+}

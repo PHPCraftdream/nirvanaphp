@@ -1,0 +1,30 @@
+<?php
+
+namespace {{namespace}} {
+	use \PHPCraftdream\NirvanaPHP\Framework\FrameworkException;
+	use \PHPCraftdream\NirvanaPHP\Framework;
+
+	const DS = DIRECTORY_SEPARATOR;
+
+	const APP_NAMESPACE = '{{namespaceEscaped}}';
+	const APP_PUBLIC_DIR = '{{appPublicDirEscaped}}';
+	const APP_DIR = '{{appDirEscaped}}';
+	const APP_ENV_DIR = APP_DIR . 'Env' . DS;
+	const APP_SYSTEM_DIR = APP_DIR . 'system' . DS;
+	const APP_VENDOR_DIR = APP_DIR . 'vendor' . DS;
+	const FRAMEWORK_DIR = '{{frameworkDirEscaped}}';
+
+	return call_user_func_array(
+		function () {
+			require_once FRAMEWORK_DIR . 'autoload.php';
+			require_once APP_VENDOR_DIR . 'autoload.php';
+
+			$autoload = Framework::newAppAutoload(APP_NAMESPACE, APP_SYSTEM_DIR);
+			$initApp = Framework::newAppInit(APP_ENV_DIR, APP_PUBLIC_DIR);
+
+			spl_autoload_register($autoload, true, true);
+			return $initApp;
+		},
+		array()
+	);
+}

@@ -1,0 +1,11 @@
+<?php
+
+namespace {{namespace}}\Config {
+	$dbName = $app->appNamespace();
+
+	$data['dsn'] = "{$data['type']}:host=localhost;dbname=$dbName;charset=UTF8";
+	$data['user'] = 'app';
+	$data['password'] = 'app';
+
+	return $data;
+}

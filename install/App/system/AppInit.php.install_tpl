@@ -1,0 +1,38 @@
+<?php
+
+namespace {{namespace}} {
+
+	use PHPCraftdream\NirvanaPHP\Framework\Module\Module;
+	use PHPCraftdream\NirvanaPHP\Framework\Module\ModuleInterface;
+	use Psr\Http\Message\ResponseInterface;
+	use Psr\Http\Message\ServerRequestInterface;
+
+	class AppInit extends Module implements ModuleInterface {
+		public function moduleInit() {
+
+		}
+
+		public function registerRoutes() {
+			$app = $this->getApp();
+			$router = $app->getRouter();
+
+			$router->map('GET', '/',
+				function (ServerRequestInterface $request, ResponseInterface $response)
+				{
+					$response->getBody()->write('<h1>Hello, World!</h1>');
+
+					return $response;
+				}
+			);
+
+		}
+
+		public function registerConsoleCommands() {
+
+		}
+
+		public function subscribeEvents() {
+
+		}
+	}
+}

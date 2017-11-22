@@ -1,0 +1,7 @@
+<?php
+
+namespace {{namespace}} {
+	class AppException extends \PHPCraftdream\NirvanaPHP\Framework\FrameworkException {
+
+	}
+}

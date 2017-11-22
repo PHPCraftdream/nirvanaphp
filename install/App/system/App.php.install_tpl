@@ -1,0 +1,32 @@
+<?php
+
+namespace {{namespace}} {
+	use PHPCraftdream\NirvanaPHP\App as RootApp;
+	use Psr\Http\Message\ResponseInterface;
+	use Psr\Http\Message\ServerRequestInterface;
+
+	class App extends RootApp {
+		public function appDir(): string {
+			return APP_DIR;
+		}
+
+		public function appNamespace(): string {
+			return __NAMESPACE__;
+		}
+
+		protected function defineAppModules() {
+			$this->getModuleManager()->define('AppInit',
+				function (RootApp $app)
+				{
+					return new AppInit($app, 'AppInit');
+				}
+			);
+		}
+
+		public function notFound(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface {
+			$response->getBody()->write('<h1>Error 404: Not found</h1>');
+
+			return $response;
+		}
+	}
+}

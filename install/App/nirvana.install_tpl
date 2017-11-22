@@ -1,0 +1,11 @@
+<?php
+
+namespace {{namespace}} {
+	$initApp = require_once 'autoload.php';
+
+	$app = $initApp();
+
+	$app->initConsole();
+
+	$app->getConsole()->run();
+}

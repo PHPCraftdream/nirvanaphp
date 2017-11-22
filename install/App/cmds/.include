@@ -1,0 +1,13 @@
+<?php
+
+namespace NirvanaPHP_Console_Run {
+	if (!empty($command)) {
+		array_splice($argv, 1, 0, $command);
+		$argc++;
+
+		$_SERVER['argv'] = $argv;
+		$_SERVER['argc'] = $argc;
+	}
+
+	require __DIR__ . DIRECTORY_SEPARATOR . '..'. DIRECTORY_SEPARATOR . 'nirvana';
+}

@@ -1,0 +1,18 @@
+<?php
+
+namespace {{namespace}} {
+	return call_user_func_array(
+		function (string $envDir, string $publicDir) {
+			$app = new App($envDir);
+
+			$app->appSetPublicDir($publicDir);
+
+			$app->getEnvInfo()->setEnvDev();
+			//$app->getEnvInfo()->setEnvTest();
+			//$app->getEnvInfo()->setEnvProd();
+
+			return $app;
+		},
+		[$envDir, $publicDir]
+	);
+}
