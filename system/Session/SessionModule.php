@@ -36,7 +36,7 @@ namespace PHPCraftdream\NirvanaPHP\Session {
 			$events->addListener(Events::BEFORE_ROUTE, function () use ($sessionModule) {
 				$sessionModule->start();
 
-				$sessionModule->setValue('asdfasdf', time());
+				//$sessionModule->setValue('asdfasdf', time());
 			});
 		}
 	}
